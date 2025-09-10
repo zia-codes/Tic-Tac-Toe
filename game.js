@@ -1,38 +1,3 @@
-// let cell = document.querySelectorAll(".cell");
-// let reset = document.querySelector(".rect");
-
-// let turn = true;
-
-// const winpattern = [
-//     [0,1,2],
-//     [0,3,6],
-//     [0,4,8],
-//     [1,4,7],
-//     [2,5,8],
-//     [2,4,6],
-//     [3,4,5],
-//     [6,7,8]
-// ];
-// cell.forEach((cell) =>{
-//  cell.addEventListener("click", ()=>{
-//  console.log("button was clicked");
-//  if(turn){
-//     cell.innerText = "O";
-//     turn = false;
-//  }else{
-//     cell.innerText="X";
-//     turn = true;
-
-//  }
-//  cell.disabled= true;
-//  });
-// });
-
-// const checkWinner = () =>{
-//     for(let pattern of winpattern){
-        
-//     }
-// }
 let cells = document.querySelectorAll(".cell");
 let reset = document.querySelector(".reset");
 
