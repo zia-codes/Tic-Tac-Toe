@@ -13,7 +13,6 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
 }
 
 .game {
@@ -25,6 +24,7 @@ body {
     align-items: center;
     gap: 1.5vmin;
 }
+
 .cell {
     height: 18vmin;
     width: 18vmin;
@@ -34,8 +34,36 @@ body {
     font-size: 10vmin;
     color: #b0413e;
     background-color: #ffffc7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+.cell:hover {
+    transform: scale(1.05);
+    background-color: #fff4a3;
+}
+
+/* Fade-in effect for X and O */
+.cell span {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cell span.show {
+    opacity: 1;
+}
+
+/* Winning highlight */
+.cell.win {
+    background-color: #a3ff99; /* soft green highlight */
+    transform: scale(1.1);
+}
+
+/* Reset button styling */
 .reset {
     padding: 1rem;
     font-size: 1.25rem;
@@ -43,4 +71,11 @@ body {
     color: #fff;
     border-radius: 1rem;
     border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.reset:hover {
+    background-color: #333333;
+    transform: scale(1.05);
 }

@@ -17,14 +17,15 @@ const winpattern = [
 // Add click event to all cells
 cells.forEach((cell, index) => {
     cell.addEventListener("click", () => {
+        // Add fade-in span for animation
         if(turn){
-            cell.innerText = "O";
+            cell.innerHTML = "<span class='show'>O</span>";
             turn = false;
         } else {
-            cell.innerText = "X";
+            cell.innerHTML = "<span class='show'>X</span>";
             turn = true;
         }
-        // cell.disabled = true;
+
         cell.style.pointerEvents = "none"; // prevent multiple clicks
         checkWinner();
     });
@@ -37,7 +38,14 @@ const checkWinner = () => {
         if(cells[a].innerText && 
            cells[a].innerText === cells[b].innerText && 
            cells[a].innerText === cells[c].innerText){
+            
+            // Add winning animation class
+            cells[a].classList.add('win');
+            cells[b].classList.add('win');
+            cells[c].classList.add('win');
+
             alert(`${cells[a].innerText} Wins!`);
+
             // Disable all cells
             cells.forEach(cell => cell.style.pointerEvents = "none");
             return;
@@ -54,6 +62,7 @@ const checkWinner = () => {
 reset.addEventListener("click", () => {
     cells.forEach(cell => {
         cell.innerText = "";
+        cell.classList.remove('win'); // remove winning animation
         cell.style.pointerEvents = "auto"; // enable click
     });
     turn = true; // Reset turn to O
